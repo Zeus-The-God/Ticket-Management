@@ -19,22 +19,29 @@
         <td mat-cell *matCellDef="let row">{{row.priority}}</td>
       </ng-container>
 
-      <!-- Created_By Column -->
+      <!-- Priority CraetedBy -->
       <ng-container matColumnDef="created_by">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Created By</th>
         <td mat-cell *matCellDef="let row">{{row.created_by}}</td>
       </ng-container>
 
-      <!-- Status Column -->
+      <!-- Priority Status -->
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
         <td mat-cell *matCellDef="let row">{{row.status}}</td>
       </ng-container>
 
-      <!-- Status Column -->
-      <ng-container matColumnDef="comment">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Comment</th>
-        <td mat-cell *matCellDef="let row">{{row.comment}}</td>
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+        <td mat-cell *matCellDef="let row">
+          <button class="btn btn-light " (click)="onEditClick()">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-light ml-1">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
